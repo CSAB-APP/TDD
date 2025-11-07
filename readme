@@ -1,0 +1,15 @@
+readme
+
+# create venv and activate
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+# install requirements
+pip install -r requirements.txt
+
+# copy example env to .env in src
+Copy-Item -Path src\.env.example -Destination src\.env
+
+# run the FastAPI app
+cd src
+uvicorn --reload --port 8000 main:app
